@@ -1,16 +1,19 @@
-import { Chat, Notifications, Person, Search } from '@material-ui/icons';
-import React from 'react';
-import './topbar.css'
+import { Chat, Notifications, Person, Search } from "@material-ui/icons";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./topbar.css";
 
 export default function Topbar() {
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <span className="logo">LamaSocial</span>
+        <Link to="/" style={{textDecoration:"none"}}>
+          <span className="logo">LamaSocial</span>
+        </Link>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
-          <Search className='searchIcon' />
+          <Search className="searchIcon" />
           <input
             placeholder="Search for friend, post or video"
             className="searchInput"
