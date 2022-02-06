@@ -7,9 +7,6 @@ import axios from 'axios'
 
 export default function Feed() {
   const [posts, setPosts] = useState([]);
-  
-  // some changes to check somn
-  const ksd="kjd";
 
   useEffect(()=>{
     const fetchPosts = async() => {
