@@ -1,7 +1,16 @@
-import React from 'react';
+import React from "react";
+import { useRef } from "react";
 import "./login.css";
 
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log('hool');
+  };
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -12,15 +21,27 @@ export default function Login() {
           </span>
         </div>
         <div className="loginRight">
-          <div className="loginBox">
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
+          <form onSubmit={handleClick} className="loginBox">
+            <input
+              placeholder="Email"
+              type="email"
+              ref={email}
+              required
+              className="loginInput"
+            />
+            <input
+              type="password"
+              ref={password}
+              required
+              placeholder="Password"
+              className="loginInput"
+            />
             <button className="loginButton">Log In</button>
             <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton">
               Create a New Account
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
