@@ -4,7 +4,7 @@ const dotenv = require("dotenv").config();;
 const helmet = require("helmet");
 const morgan = require("morgan");
 const app = express();
-const PORT = 4040;
+const PORT = 5040;
 
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
