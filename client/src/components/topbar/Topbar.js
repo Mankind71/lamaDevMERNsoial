@@ -1,13 +1,18 @@
 import { Chat, Notifications, Person, Search } from "@material-ui/icons";
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import "./topbar.css";
 
 export default function Topbar() {
+  const { user } = useContext(AuthContext);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <Link to="/" style={{textDecoration:"none"}}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo">LamaSocial</span>
         </Link>
       </div>
@@ -39,7 +44,13 @@ export default function Topbar() {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
+        <Link to={`/profile/${user.username}`}>
+          <img
+            src={PF + "person/" + (user.profilePicture || "9.jpeg")}
+            alt=""
+            className="topbarImg"
+          />
+        </Link>
       </div>
     </div>
   );

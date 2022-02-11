@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config();;
 const helmet = require("helmet");
 const morgan = require("morgan");
 const app = express();
