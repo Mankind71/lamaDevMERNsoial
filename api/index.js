@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();;
+const dotenv = require("dotenv").config();
 const helmet = require("helmet");
 const morgan = require("morgan");
 const app = express();
-const PORT = 5040;
+const PORT = 5000;
 
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");

@@ -45,7 +45,7 @@ function Post({ post }) {
                 src={
                   user.profilePicture
                     ? PF + "person/" + user.profilePicture
-                    : PF + "person/" + "9.jpeg"
+                    : PF + "person/9.jpeg"
                 }
                 alt=""
                 className="postProfileImg"

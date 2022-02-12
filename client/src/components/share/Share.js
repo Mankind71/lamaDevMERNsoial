@@ -10,18 +10,16 @@ export default function Share() {
   const desc = useRef();
   const [file, setFile] = useState(null);
 
-  const submitHandler = async (e) =>{
-    e.preventDefault()
+  const submitHandler = async (e) => {
+    e.preventDefault();
     const newPost = {
       userId: user._id,
-      desc:desc.current.value
-    }
+      desc: desc.current.value,
+    };
     try {
-      await axios.post("/posts",newPost)
-  } catch (error) {
-
-    }
-  }
+      await axios.post("/posts", newPost);
+    } catch (error) {}
+  };
 
   return (
     <div className="share">
@@ -31,7 +29,7 @@ export default function Share() {
             src={
               user.profilePicture
                 ? PF + "person/" + user.profilePicture
-                : PF + "person/" + "9.jpeg"
+                : PF + "person/9.jpeg"
             }
             alt=""
             className="shareProfileImg"
@@ -69,7 +67,9 @@ export default function Share() {
               <span className="shareOptionText">Feelings</span>
             </div>
           </div>
-          <button className="shareButton" type="submit">Share</button>
+          <button className="shareButton" type="submit">
+            Share
+          </button>
         </form>
       </div>
     </div>
