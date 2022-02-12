@@ -19,7 +19,7 @@ function Profile() {
     };
     fetchUser();
   }, [username]);
-
+  
   return (
     <>
       <Topbar />
