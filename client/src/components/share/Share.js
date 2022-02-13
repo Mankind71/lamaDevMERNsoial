@@ -26,11 +26,7 @@ export default function Share() {
       <div className="shareWrapper">
         <div className="shareTop">
           <img
-            src={
-              user.profilePicture
-                ? PF + user.profilePicture
-                : "9.jpeg"
-            }
+            src={user.profilePicture ? PF + user.profilePicture : PF + "9.jpeg"}
             alt=""
             className="shareProfileImg"
           />

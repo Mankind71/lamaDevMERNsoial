@@ -34,7 +34,7 @@ function Profile() {
                 className="profileCoverImg"
               />
               <img
-                src={PF + (user.profilePicture || "3.jpeg")}
+                src={PF + (user.profilePicture || PF + "3.jpeg")}
                 alt=""
                 className="profileUserImg"
               />
