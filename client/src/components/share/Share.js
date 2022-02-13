@@ -28,8 +28,8 @@ export default function Share() {
           <img
             src={
               user.profilePicture
-                ? PF + "person/" + user.profilePicture
-                : PF + "person/9.jpeg"
+                ? PF + user.profilePicture
+                : "9.jpeg"
             }
             alt=""
             className="shareProfileImg"
