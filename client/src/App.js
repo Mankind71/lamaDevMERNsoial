@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import Profile from "./pages/profile/Profile";
+import { Home, Login, Profile } from "./index";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +11,6 @@ import { AuthContext } from "./context/AuthContext";
 
 function App() {
   const { user } = useContext(AuthContext);
-  // console.log(user);
 
   return (
     <Router>
@@ -21,9 +18,7 @@ function App() {
         <Route exact path="/">
           {user ? <Home /> : <Login />}
         </Route>
-        <Route path="/login">
-          {user ? <Redirect to="/" /> : <Login />}
-        </Route>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/register">
           {user ? <Redirect to="/" /> : <Register />}
         </Route>
