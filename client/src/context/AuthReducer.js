@@ -1,4 +1,4 @@
-const AuthReducer = (state,action) =>{
+const AuthReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":
       return {
@@ -8,7 +8,7 @@ const AuthReducer = (state,action) =>{
       };
     case "LOGIN_SUCCESS":
       return {
-        dum:'kjn',
+        dum: "kjn",
         user: action.payload,
         isFetching: false,
         error: false,
@@ -19,9 +19,27 @@ const AuthReducer = (state,action) =>{
         isFetching: false,
         error: action.payload,
       };
+    case "FOLLOW":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          following: [...state.user.following, action.payload],
+        },
+      };
+    case "UNFOLLOW":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          following: state.user.following.filter(
+            (following) => following !== action.payload
+          ),
+        },
+      };
     default:
       return state;
   }
-} 
+};
 
 export default AuthReducer;

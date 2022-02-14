@@ -29,12 +29,12 @@ function Profile() {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src={PF + (user.coverPicture || "9.jpeg")}
+                src={user.coverPicture ? PF + user.coverPicture :PF +  "9.jpeg"}
                 alt=""
                 className="profileCoverImg"
               />
               <img
-                src={PF + (user.profilePicture || PF + "3.jpeg")}
+                src={ user.profilePicture ? PF + user.profilePicture : PF + "3.jpeg"}
                 alt=""
                 className="profileUserImg"
               />
